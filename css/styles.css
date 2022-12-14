@@ -18,8 +18,7 @@
   --letter-spacing: 0.02rem;
   --line-height: 1.5;
   --semibold-weight: 600;
-  --transition-duration: 250ms;
-  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --main-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body {
   font-family: var(--main-font);
@@ -110,8 +109,7 @@ ul {
   border: 1px solid var(--cornflower-color);
   border-radius: 4px;
   text-decoration: none;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
+  transition: background-color var(--main-transition);
 }
 .btn:hover,
 .btn:focus {
@@ -122,10 +120,6 @@ ul {
 .button-item:focus {
   box-shadow: 0px 1px 10px rgba(46, 47, 66, 0.58);
 }
-.button-item {
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-}
 .btn.backward {
   font-weight: var(--semibold-weight);
   line-height: 1.19;
@@ -134,12 +128,11 @@ ul {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border: var(--blue-color);
   border-radius: 4px;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
+  transition: background-color var(--main-transition);
 }
 .btn.backward:hover,
 .btn.backward:focus {
-  background: #404bbf;
+  background-color: #404bbf;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 /* -------------------------h1/h2/h3---------------------------------- */
@@ -175,8 +168,7 @@ ul {
   font-weight: var(--semibold-weight);
   color: var(--navy-blue);
   text-decoration: none;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
+  transition: color var(--main-transition);
 }
 .link:hover,
 .link:focus {
@@ -220,9 +212,6 @@ ul {
   border: 0;
   clip: rect(0 0 0 0);
 }
-.description.add {
-  color: var(--cloud-color);
-}
 .description.footer.no-psevdo {
   color: var(--cloud-color);
 }
@@ -246,8 +235,7 @@ ul {
   position: relative;
   border-bottom: 0.5px solid var(--cloud-color);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
+  transition: box-shadow var(--main-transition);
   overflow: hidden;
 }
 .card-item:hover {
@@ -373,11 +361,6 @@ ul {
 .card-item {
   flex-basis: calc((100% - 48px) / 3);
 }
-.description.add {
-  width: 296px;
-  height: 96px;
-  margin: -260px 32px 194px 32px;
-}
 .buttons-items {
   display: flex;
   justify-content: center;
@@ -392,6 +375,16 @@ ul {
   padding: 0 0 120px 0;
 }
 /* -------------------------SVG---------------------------------- */
+.contacts-icon {
+  fill: var(--slate-color);
+  margin: -2px -25px 0 0;
+}
+.contacts-icon.phone {
+  margin-top: 0;
+}
+.contacts-icon:hover {
+  fill: var(--blue-color);
+}
 .team-svg-icon-link {
   background-color: var(--blue-color);
   border-radius: 50%;
@@ -403,6 +396,10 @@ ul {
 }
 .customers-svg-icon {
   fill: #8e8f99;
+  transition: fill var(--main-transition);
+}
+.customers-svg-icon:hover {
+  fill: var(--blue-color);
 }
 .customers-svg-link {
   border: 1px solid var(--light-slate-color);
@@ -410,13 +407,9 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.customers-svg-icon:hover {
-  fill: var(--blue-color);
+  transition: border var(--main-transition);
 }
 .customers-svg-link:hover {
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
   border: 1px solid var(--blue-color);
 }
 .footer-svg-icon-link {
@@ -426,22 +419,19 @@ ul {
   border-radius: 50%;
   background-color: var(--bg-footer-icons);
   padding: 8px;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-}
-.footer-svg-icon {
-  fill: var(--cloud-color);
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
+  transition: background-color var(--main-transition);
 }
 .footer-svg-icon-link:hover {
   background-color: var(--green-color);
   opacity: 1;
 }
+.footer-svg-icon {
+  fill: var(--cloud-color);
+}
 /* -------------------------POSITIONS/MODAL/OVERLAY---------------------------------- */
 .nav-link.active::after {
   position: absolute;
-  bottom: -10px;
+  bottom: -30px;
   left: 0;
   content: "";
   width: 100%;
@@ -461,9 +451,7 @@ ul {
   height: 0px;
   overflow: hidden;
   background-color: var(--blue-color-with-opacity);
-  transition-property: height;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: linear;
+  transition: height var(--main-transition);
 }
 .card-item:hover .overlay {
   height: 300px;
@@ -476,27 +464,6 @@ ul {
   color: var(--cloud-color);
   font-size: 24px;
 }
-.doing-item {
-  position: relative;
-}
-.doing-item::before {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  display: inline-block;
-  content: "";
-  background-color: var(--cloud-color-with-opacity);
-  opacity: 1;
-  width: 100%;
-  height: 100%;
-}
-
-.doing-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: var(--blue-color);
-}
 
 .backdrop {
   position: fixed;
@@ -506,7 +473,7 @@ ul {
   height: 100vh;
   background-color: rgba(46, 47, 66, 0.4);
   opacity: 1;
-  transition: opacity 250ms var(--transition-timing-function);
+  transition: opacity var(--main-transition);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -521,7 +488,7 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: transform 250ms var(--transition-timing-function);
+  transition: transform var(--main-transition);
   min-width: 400px;
   min-height: 550px;
   background-color: var(--modal-color);
