@@ -362,7 +362,6 @@ ul {
   padding: 96px 0 120px 0;
 }
 .container-card-item {
-  /* z-index: 3; */
   margin: 32px 16px;
 }
 .card-items {
@@ -515,13 +514,13 @@ ul {
   visibility: hidden;
 }
 .backdrop .is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.5);
+  transform: translate(-50%, -50%);
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%);
   transition: transform 250ms var(--transition-timing-function);
   min-width: 400px;
   min-height: 550px;
@@ -532,8 +531,8 @@ ul {
 }
 .close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 24px;
+  right: 24px;
   background-color: var(--modal-color);
   border-style: none;
 }
