@@ -263,7 +263,9 @@ ul {
 .nav-link {
   position: relative;
 }
-.contacts {
+
+.contacts-icons,
+.contacts-icon {
   display: flex;
   gap: 40px;
   margin-left: auto;
@@ -375,14 +377,14 @@ ul {
   padding: 0 0 120px 0;
 }
 /* -------------------------SVG---------------------------------- */
-.contacts-icon {
+.svg {
   fill: var(--slate-color);
-  margin: -2px -25px 0 0;
+  margin: -2px -20px 0 0;
 }
-.contacts-icon.phone {
-  margin-top: 0;
+.phone {
+  margin: 0 -20px 0 0;
 }
-.contacts-icon:hover {
+.contacts-icon:hover .svg {
   fill: var(--blue-color);
 }
 .team-svg-icon-link {
